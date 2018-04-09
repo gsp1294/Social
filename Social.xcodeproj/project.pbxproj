@@ -8,10 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		8B835B5EF1CDC4AB004213FA /* Pods_Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 142A6A5FB9EFAEE6ACE7B179 /* Pods_Social.framework */; };
+		E7034483207B4A470032C96B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7034482207B4A470032C96B /* LoginViewController.swift */; };
+		E7034485207B4A5F0032C96B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7034484207B4A5F0032C96B /* RegisterViewController.swift */; };
+		E7034487207B64EE0032C96B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7034486207B64EE0032C96B /* ProfileViewController.swift */; };
+		E703448A207B674E0032C96B /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7034489207B674E0032C96B /* extensions.swift */; };
 		E711F4EF2078C3E500D0BB0F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E711F4EE2078C3E400D0BB0F /* GoogleService-Info.plist */; };
 		E7FB345B2077A2BE00189E3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FB345A2077A2BE00189E3E /* AppDelegate.swift */; };
-		E7FB345D2077A2BE00189E3E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FB345C2077A2BE00189E3E /* FirstViewController.swift */; };
-		E7FB345F2077A2BE00189E3E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FB345E2077A2BE00189E3E /* SecondViewController.swift */; };
+		E7FB345D2077A2BE00189E3E /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FB345C2077A2BE00189E3E /* FeedViewController.swift */; };
+		E7FB345F2077A2BE00189E3E /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FB345E2077A2BE00189E3E /* GroupViewController.swift */; };
 		E7FB34622077A2BE00189E3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7FB34602077A2BE00189E3E /* Main.storyboard */; };
 		E7FB34642077A2C100189E3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7FB34632077A2C100189E3E /* Assets.xcassets */; };
 		E7FB34672077A2C100189E3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7FB34652077A2C100189E3E /* LaunchScreen.storyboard */; };
@@ -21,11 +25,15 @@
 		142A6A5FB9EFAEE6ACE7B179 /* Pods_Social.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Social.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		183B25B1A7AF4696FB63D76B /* Pods-Social.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social.release.xcconfig"; path = "Pods/Target Support Files/Pods-Social/Pods-Social.release.xcconfig"; sourceTree = "<group>"; };
 		C4EBD1707455A20AFB0903D3 /* Pods-Social.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Social/Pods-Social.debug.xcconfig"; sourceTree = "<group>"; };
+		E7034482207B4A470032C96B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E7034484207B4A5F0032C96B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		E7034486207B64EE0032C96B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E7034489207B674E0032C96B /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		E711F4EE2078C3E400D0BB0F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E7FB34572077A2BE00189E3E /* Social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Social.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7FB345A2077A2BE00189E3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E7FB345C2077A2BE00189E3E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		E7FB345E2077A2BE00189E3E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		E7FB345C2077A2BE00189E3E /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		E7FB345E2077A2BE00189E3E /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		E7FB34612077A2BE00189E3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E7FB34632077A2C100189E3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7FB34662077A2C100189E3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -91,6 +99,7 @@
 				E711F4EE2078C3E400D0BB0F /* GoogleService-Info.plist */,
 				E7FB34652077A2C100189E3E /* LaunchScreen.storyboard */,
 				E7FB34682077A2C100189E3E /* Info.plist */,
+				E7034489207B674E0032C96B /* extensions.swift */,
 			);
 			path = Social;
 			sourceTree = "<group>";
@@ -98,8 +107,11 @@
 		E7FB346E2077A80B00189E3E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E7FB345C2077A2BE00189E3E /* FirstViewController.swift */,
-				E7FB345E2077A2BE00189E3E /* SecondViewController.swift */,
+				E7FB345C2077A2BE00189E3E /* FeedViewController.swift */,
+				E7FB345E2077A2BE00189E3E /* GroupViewController.swift */,
+				E7034482207B4A470032C96B /* LoginViewController.swift */,
+				E7034484207B4A5F0032C96B /* RegisterViewController.swift */,
+				E7034486207B64EE0032C96B /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -253,9 +265,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7FB345F2077A2BE00189E3E /* SecondViewController.swift in Sources */,
+				E7034487207B64EE0032C96B /* ProfileViewController.swift in Sources */,
+				E7034483207B4A470032C96B /* LoginViewController.swift in Sources */,
+				E7034485207B4A5F0032C96B /* RegisterViewController.swift in Sources */,
+				E703448A207B674E0032C96B /* extensions.swift in Sources */,
+				E7FB345F2077A2BE00189E3E /* GroupViewController.swift in Sources */,
 				E7FB345B2077A2BE00189E3E /* AppDelegate.swift in Sources */,
-				E7FB345D2077A2BE00189E3E /* FirstViewController.swift in Sources */,
+				E7FB345D2077A2BE00189E3E /* FeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,7 +419,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 62H4M34Y59;
 				INFOPLIST_FILE = Social/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.GP.Social;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -419,7 +438,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 62H4M34Y59;
 				INFOPLIST_FILE = Social/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.GP.Social;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
