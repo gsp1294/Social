@@ -38,12 +38,15 @@ class RegisterViewController: UIViewController {
             return
         }
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
-            if error != nil{
+            guard let user = user, error == nil else {
                 print(error as Any)
                  self.alert(title: "Error", message: "Invalid Username or Password", actionTitle: "OK")
-            }else{
-                self.performSegue(withIdentifier: "segueHome", sender: self)
+                return
             }
+            let userData = ["userID" : user.providerID, "email" : user.email!]
+            FirebaseService.instance.createUser(userID: user.uid, userData: userData)
+            self.performSegue(withIdentifier: "segueHome", sender: self)
+            
         }
         
     }
