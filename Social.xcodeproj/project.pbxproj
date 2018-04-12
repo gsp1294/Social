@@ -17,6 +17,7 @@
 		E79B54D7207F3D5D001223A3 /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B54D6207F3D5D001223A3 /* AddPostViewController.swift */; };
 		E79B54D9207F40F3001223A3 /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B54D8207F40F3001223A3 /* Posts.swift */; };
 		E79B54DB207F47A4001223A3 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B54DA207F47A4001223A3 /* FeedCell.swift */; };
+		E79B54DD207F9B5D001223A3 /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B54DC207F9B5D001223A3 /* AddGroupViewController.swift */; };
 		E7FB345B2077A2BE00189E3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FB345A2077A2BE00189E3E /* AppDelegate.swift */; };
 		E7FB345D2077A2BE00189E3E /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FB345C2077A2BE00189E3E /* FeedViewController.swift */; };
 		E7FB345F2077A2BE00189E3E /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FB345E2077A2BE00189E3E /* GroupViewController.swift */; };
@@ -38,6 +39,7 @@
 		E79B54D6207F3D5D001223A3 /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
 		E79B54D8207F40F3001223A3 /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
 		E79B54DA207F47A4001223A3 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		E79B54DC207F9B5D001223A3 /* AddGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
 		E7FB34572077A2BE00189E3E /* Social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Social.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7FB345A2077A2BE00189E3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7FB345C2077A2BE00189E3E /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				E7034484207B4A5F0032C96B /* RegisterViewController.swift */,
 				E7034486207B64EE0032C96B /* ProfileViewController.swift */,
 				E79B54D6207F3D5D001223A3 /* AddPostViewController.swift */,
+				E79B54DC207F9B5D001223A3 /* AddGroupViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				E79B54D7207F3D5D001223A3 /* AddPostViewController.swift in Sources */,
 				E7034483207B4A470032C96B /* LoginViewController.swift in Sources */,
 				E79B54D5207E3D97001223A3 /* FirebaseService.swift in Sources */,
+				E79B54DD207F9B5D001223A3 /* AddGroupViewController.swift in Sources */,
 				E79B54DB207F47A4001223A3 /* FeedCell.swift in Sources */,
 				E7034485207B4A5F0032C96B /* RegisterViewController.swift in Sources */,
 				E703448A207B674E0032C96B /* extensions.swift in Sources */,

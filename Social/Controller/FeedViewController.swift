@@ -20,6 +20,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listPost.count
     }
+
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableviewFeed.dequeueReusableCell(withIdentifier: "feedCell") as! FeedCell
@@ -33,7 +34,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//        tableviewFeed.estimatedRowHeight = 100
+//        tableviewFeed.rowHeight = UITableViewAutomaticDimension
 
     }
 
@@ -44,6 +46,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
        
     }
+    
+    
     
     func retrievePost (completion : @escaping (_ listPost : [Posts]) -> ()){
           var list = [Posts]()
