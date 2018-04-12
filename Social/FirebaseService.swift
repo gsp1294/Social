@@ -24,4 +24,10 @@ class FirebaseService {
         usersBase.child(userID).updateChildValues(userData)
     }
     
+    func createPost(PostData: Dictionary<String , Any>){
+        
+        feebBase.childByAutoId().updateChildValues(PostData)
+        
+    }
+    
 }
