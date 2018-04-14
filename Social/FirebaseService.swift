@@ -30,4 +30,35 @@ class FirebaseService {
         
     }
     
+    func getEmail(searchString : String, completion: @escaping ( _ emails : [String]) -> ()){
+        var emailList = [String]()
+        usersBase.observe(.value) { (userSnapshot) in
+            guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            for user in userSnapshot {
+                let email = user.childSnapshot(forPath: "email").value as! String
+                
+                if email.contains(searchString) == true && email != Auth.auth().currentUser?.email {
+                    emailList.append(email)
+                }
+            }
+            completion(emailList)
+        }
+            
+        }
+
+    
+    func retrievePost (completion : @escaping (_ listPost : [Posts]) -> ()){
+        var list = [Posts]()
+        FirebaseService.instance.feebBase.observe(DataEventType.childAdded) { (FeedSnapshot) in
+            let postData = FeedSnapshot.value as! Dictionary<String,String>
+            let objPost = Posts()
+            objPost.user = postData["user"]
+            objPost.post = postData["post"]
+            list.append(objPost)
+            completion(list)
+            
+            }
+        }
 }
+    
+

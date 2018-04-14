@@ -40,7 +40,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        retrievePost { (post) in
+        FirebaseService.instance.retrievePost { (post) in
             self.listPost = post.reversed()
             self.tableviewFeed.reloadData()
         }
@@ -49,22 +49,10 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     
-    func retrievePost (completion : @escaping (_ listPost : [Posts]) -> ()){
-          var list = [Posts]()
-        FirebaseService.instance.feebBase.observe(DataEventType.childAdded) { (FeedSnapshot) in
-        let postData = FeedSnapshot.value as! Dictionary<String,String>
 
-                let objPost = Posts()
-            
-                objPost.user = postData["user"]
-                objPost.post = postData["post"]
-                list.append(objPost)
-                completion(list)
-            
-        }
-        
-        
-    }
+    
+    
+    
 
 
 }

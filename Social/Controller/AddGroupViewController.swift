@@ -7,14 +7,56 @@
 //
 
 import UIKit
+import Firebase
+
+
+class AddMemberCell : UITableViewCell{
+    
+}
 
 class AddGroupViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+    
+    var listGroupMembers = [String]()
+    @IBOutlet weak var tableEmail: UITableView!
+    var listEmail = [String]()
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return listEmail.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableEmail.dequeueReusableCell(withIdentifier: "addMemberCell") as! AddMemberCell
+        cell.textLabel?.text = listEmail[indexPath.row]
+        if listGroupMembers.contains(listEmail[indexPath.row]){
+            cell.accessoryType = .checkmark
+        }else{
+            cell.accessoryType = .none
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableEmail.cellForRow(at: indexPath) else {
+            return
+        }
+        let selectedEmail = listEmail[indexPath.row]
+        if listGroupMembers.contains(selectedEmail){
+                cell.accessoryType = .none
+            for (index,value) in listGroupMembers.enumerated(){
+                if value == selectedEmail{
+                    listGroupMembers.remove(at: index)
+                }
+            }
+            }
+            else{
+                cell.accessoryType = .checkmark
+                listGroupMembers.append(selectedEmail)
+            }
+        
     }
     
 
@@ -23,8 +65,22 @@ class AddGroupViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var txtfieldMembers: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        txtfieldMembers.addTarget(self, action: #selector(searchMembers), for: UIControlEvents.editingChanged)
 
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func searchMembers(){
+        guard !(txtfieldMembers.text?.isEmpty)! else {
+            listEmail = []
+            tableEmail.reloadData()
+            return
+        }
+        FirebaseService.instance.getEmail(searchString: txtfieldMembers.text!) { (emailArray) in
+            self.listEmail = emailArray
+            self.tableEmail.reloadData()
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {

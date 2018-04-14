@@ -349,7 +349,7 @@
                                                 <rect key="frame" x="0.0" y="168" width="375" height="425"/>
                                                 <color key="backgroundColor" red="0.97254901960784312" green="0.97647058823529409" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="AK8-Y3-1JN">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="addMemberCell" id="AK8-Y3-1JN" customClass="AddMemberCell" customModule="Social" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AK8-Y3-1JN" id="IE7-fi-qqu">
@@ -389,6 +389,7 @@
                     </view>
                     <connections>
                         <outlet property="btnDone" destination="DcI-ZA-iz5" id="bAh-yo-ZPF"/>
+                        <outlet property="tableEmail" destination="Rt0-Mj-CQ1" id="34D-mr-Arv"/>
                         <outlet property="txtfieldMembers" destination="vYd-al-648" id="Sp0-t5-LVs"/>
                         <outlet property="txtfieldTitle" destination="gCU-aH-3bp" id="ahu-AO-F3A"/>
                     </connections>
