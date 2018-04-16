@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -446,14 +447,40 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="oOV-Sr-yiN">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="groupCell" id="oOV-Sr-yiN" customClass="GroupCell" customModule="Social" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oOV-Sr-yiN" id="mhA-3l-aqr">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJz-9n-bst">
+                                                    <rect key="frame" x="23" y="19" width="303" height="20"/>
+                                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDY-MR-mb1">
+                                                    <rect key="frame" x="31" y="65" width="311" height="14"/>
+                                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="qDY-MR-mb1" secondAttribute="trailing" constant="-8" id="Nvc-6X-xFo"/>
+                                                <constraint firstItem="hJz-9n-bst" firstAttribute="trailing" secondItem="mhA-3l-aqr" secondAttribute="trailingMargin" constant="-8" id="Vcf-GM-saF"/>
+                                                <constraint firstItem="qDY-MR-mb1" firstAttribute="leading" secondItem="mhA-3l-aqr" secondAttribute="leadingMargin" constant="16" id="bf7-ru-wSm"/>
+                                                <constraint firstItem="hJz-9n-bst" firstAttribute="leading" secondItem="mhA-3l-aqr" secondAttribute="leadingMargin" constant="8" id="fxW-yy-Iwq"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="qDY-MR-mb1" secondAttribute="bottom" constant="10" id="iJB-Gu-3kx"/>
+                                                <constraint firstItem="hJz-9n-bst" firstAttribute="top" secondItem="mhA-3l-aqr" secondAttribute="topMargin" constant="8" id="r4U-Ww-AGF"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="lblGroupMemberCount" destination="qDY-MR-mb1" id="e6Z-2e-Su7"/>
+                                            <outlet property="lblGroupTitle" destination="hJz-9n-bst" id="IOn-Ua-33y"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -475,10 +502,13 @@
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Group" image="groups-tabIcon" selectedImage="groups-tabIcon" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="tableViewGroups" destination="gYT-0C-HLb" id="y7c-y3-fjw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1977" y="916"/>
+            <point key="canvasLocation" x="1976.8" y="915.29235382308855"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="fiW-7W-CV5">

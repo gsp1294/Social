@@ -59,6 +59,30 @@ class FirebaseService {
             
             }
         }
+    
+    func createGroup(withTitle title: String, emails: [String], handler: @escaping (_ groupCreated: Bool) -> ()) {
+        groupBase.childByAutoId().updateChildValues(["title": title, "members": emails])
+        handler(true)
+    }
+    
+    
+    
+    func getAllGroups(handler: @escaping (_ groupsArray: [Group]) -> ()) {
+        var groupsArray = [Group]()
+        groupBase.observe(.value) { (groupSnapshot) in
+            guard let groupSnapshot = groupSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            for group in groupSnapshot {
+                let memberArray = group.childSnapshot(forPath: "members").value as! [String]
+                if memberArray.contains((Auth.auth().currentUser?.email)!) {
+                    let title = group.childSnapshot(forPath: "title").value as! String
+                    let group = Group(title: title, id: group.key, members: memberArray, memberCount: memberArray.count)
+                    groupsArray.append(group)
+                }
+            }
+            handler(groupsArray)
+        }
+    }
+    
 }
     
 

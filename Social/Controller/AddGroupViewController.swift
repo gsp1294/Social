@@ -89,6 +89,17 @@ class AddGroupViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     @IBAction func btnDoneTapped(_ sender: Any) {
+        
+        if txtfieldTitle.text != "", listGroupMembers.count>0{
+            listGroupMembers.append((Auth.auth().currentUser?.email)!)
+            FirebaseService.instance.createGroup(withTitle: txtfieldTitle.text!, emails: listGroupMembers) { (groupCreated) in
+                if groupCreated {
+                    self.dismiss(animated: true, completion: nil)
+                } else {
+                    print("Group could not be created. Please try again.")
+                }
+            }
+        }
     }
     
     @IBAction func btnCancelTapped(_ sender: Any) {
