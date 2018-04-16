@@ -31,6 +31,7 @@ class AddPostViewController: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
         lblUser.text = Auth.auth().currentUser?.email
         txtviewPost.delegate = self
+        btnPost.keyboardToggle()
         
 
         // Do any additional setup after loading the view.
@@ -44,7 +45,6 @@ class AddPostViewController: UIViewController, UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         textView.text = ""
-        btnPost.keyboardToggle()
     }
     
     
