@@ -96,9 +96,12 @@ class AddGroupViewController: UIViewController, UITableViewDelegate, UITableView
                 if groupCreated {
                     self.dismiss(animated: true, completion: nil)
                 } else {
+                    self.alert(title: "Error", message: "Group could not be created. Please try again.", actionTitle: "OK")
                     print("Group could not be created. Please try again.")
                 }
             }
+        }else{
+            alert(title: "Error", message: "Insert Title & Group Members to proceed", actionTitle: "OK")
         }
     }
     

@@ -11,7 +11,7 @@ import UIKit
 class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var groupsArray = [Group]()
-    
+    var selectedGroup : Group?
     @IBOutlet weak var tableViewGroups: UITableView!
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -42,7 +42,18 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableViewGroups.dataSource = self
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedGroup = groupsArray[indexPath.row]
+        performSegue(withIdentifier: "segueGroupMessage", sender: self)
+        
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueGroupMessage"{
+            let vc = segue.destination as! GroupMessageViewController
+            vc.groupData = selectedGroup
+        }
+    }
 }
 
 

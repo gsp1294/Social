@@ -30,6 +30,12 @@ class FirebaseService {
         
     }
     
+     func createMessage(MessageData: String, groupId: String, sendComplete: @escaping (_ status: Bool) -> ()) {
+        groupBase.child(groupId).child("messages").childByAutoId().updateChildValues(["messageText": MessageData, "email": Auth.auth().currentUser!.email!])
+            sendComplete(true)
+    }
+    
+    
     func getEmail(searchString : String, completion: @escaping ( _ emails : [String]) -> ()){
         var emailList = [String]()
         usersBase.observe(.value) { (userSnapshot) in
@@ -60,6 +66,39 @@ class FirebaseService {
             }
         }
     
+    
+    
+    func getAllMessages(group: Group, handler: @escaping (_ messagesArray: [Messages]) -> ()) {
+        var groupMessageArray = [Messages]()
+        groupBase.child(group.groupId).child("messages").observe(.childAdded) { (groupMessageSnapshot) in
+            guard let groupMessage = groupMessageSnapshot.value as? Dictionary<String,String>
+                else { return }
+           // for groupMessage in groupMessageSnapshot {
+                let message = groupMessage["messageText"]
+                let email = groupMessage["email"]
+                let groupMessageObj = Messages(user: email!, message : message!)
+                groupMessageArray.append(groupMessageObj)
+          //  }
+            handler(groupMessageArray)
+        }
+    }
+    
+    
+    
+//    func getAllMessages(group: Group, handler: @escaping (_ messagesArray: [Messages]) -> ()) {
+//        var groupMessageArray = [Messages]()
+//        groupBase.child(group.groupId).child("messages").observe(.value) { (groupMessageSnapshot) in
+//            guard let groupMessageSnapshot = groupMessageSnapshot.children.allObjects as? [DataSnapshot] else { return }
+//            for groupMessage in groupMessageSnapshot {
+//                let message = groupMessage.childSnapshot(forPath: "messageText").value as! String
+//                let email = groupMessage.childSnapshot(forPath: "email").value as! String
+//                let groupMessage = Messages(user: email, message : message)
+//                groupMessageArray.append(groupMessage)
+//            }
+//            handler(groupMessageArray)
+//        }
+//    }
+    
     func createGroup(withTitle title: String, emails: [String], handler: @escaping (_ groupCreated: Bool) -> ()) {
         groupBase.childByAutoId().updateChildValues(["title": title, "members": emails])
         handler(true)
@@ -68,8 +107,9 @@ class FirebaseService {
     
     
     func getAllGroups(handler: @escaping (_ groupsArray: [Group]) -> ()) {
-        var groupsArray = [Group]()
+        
         groupBase.observe(.value) { (groupSnapshot) in
+            var groupsArray = [Group]()
             guard let groupSnapshot = groupSnapshot.children.allObjects as? [DataSnapshot] else { return }
             for group in groupSnapshot {
                 let memberArray = group.childSnapshot(forPath: "members").value as! [String]

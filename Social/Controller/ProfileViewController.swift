@@ -12,6 +12,8 @@ import Firebase
 class ProfileViewController: UIViewController {
 
     
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var lblProfileName: UILabel!
     @IBAction func btnLogOutTapped(_ sender: Any) {
         do{
             try Auth.auth().signOut()
@@ -28,6 +30,7 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        lblProfileName.text = Auth.auth().currentUser?.email
 
         // Do any additional setup after loading the view.
     }
