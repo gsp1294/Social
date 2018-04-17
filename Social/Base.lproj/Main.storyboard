@@ -591,7 +591,7 @@
                                         </items>
                                     </navigationBar>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3VA-T8-cNy">
-                                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                        <rect key="frame" x="0.0" y="64" width="375" height="553"/>
                                         <color key="backgroundColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupMessageCell" rowHeight="100" id="24F-EU-vNa" customClass="GroupMessageCell" customModule="Social" customModuleProvider="target">
@@ -676,7 +676,7 @@
                                     <constraint firstItem="buM-FO-OvQ" firstAttribute="leading" secondItem="ot9-8L-kxm" secondAttribute="leading" id="PfQ-G3-4kV"/>
                                     <constraint firstAttribute="centerX" secondItem="5Tj-ZG-S69" secondAttribute="centerX" id="RI2-gy-ljx"/>
                                     <constraint firstAttribute="centerY" secondItem="5Tj-ZG-S69" secondAttribute="centerY" id="TWr-j3-0r6"/>
-                                    <constraint firstAttribute="bottom" secondItem="3VA-T8-cNy" secondAttribute="bottom" id="TfV-Sm-h2m"/>
+                                    <constraint firstItem="buM-FO-OvQ" firstAttribute="top" secondItem="3VA-T8-cNy" secondAttribute="bottom" id="Trx-bU-cbx"/>
                                     <constraint firstItem="buM-FO-OvQ" firstAttribute="trailing" secondItem="ot9-8L-kxm" secondAttribute="trailing" id="XoI-sv-tsf"/>
                                     <constraint firstItem="3VA-T8-cNy" firstAttribute="trailing" secondItem="ot9-8L-kxm" secondAttribute="trailing" id="ZnK-xR-0C2"/>
                                     <constraint firstItem="1bf-PU-dyI" firstAttribute="centerX" secondItem="5Tj-ZG-S69" secondAttribute="centerX" id="eti-J3-zzd"/>
