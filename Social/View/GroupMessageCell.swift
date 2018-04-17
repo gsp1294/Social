@@ -12,6 +12,5 @@ import UIKit
 class GroupMessageCell: UITableViewCell {
     @IBOutlet weak var lblUsername: UILabel!
     @IBOutlet weak var lblTextMessage: UILabel!
-    
     @IBOutlet weak var imageViewProfileImage: UIImageView!
 }

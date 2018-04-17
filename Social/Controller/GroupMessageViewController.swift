@@ -9,6 +9,7 @@ import UIKit
 
 class GroupMessageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var contentview: UIView!
     var groupData : Group?
     var groupMessages = [Messages]()
     
@@ -35,7 +36,15 @@ class GroupMessageViewController: UIViewController, UITableViewDataSource, UITab
     }
     }
     
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//
+//        return UITableViewAutomaticDimension
+//    }
     
+    func configureTableView(){
+        tableViewGrpMessage.rowHeight = UITableViewAutomaticDimension
+        tableViewGrpMessage.estimatedRowHeight = 120.0
+    }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,7 +53,9 @@ class GroupMessageViewController: UIViewController, UITableViewDataSource, UITab
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableViewGrpMessage.dequeueReusableCell(withIdentifier: "groupMessageCell", for: indexPath) as! GroupMessageCell
+        cell.lblUsername.sizeToFit()
         cell.lblTextMessage.text = groupMessages[indexPath.row].message
+        cell.lblTextMessage.sizeToFit()
         cell.lblUsername.text = groupMessages[indexPath.row].user
         return cell
     }
@@ -59,6 +70,7 @@ class GroupMessageViewController: UIViewController, UITableViewDataSource, UITab
         }
         FirebaseService.instance.getAllMessages(group: groupData) { (groupArray) in
             self.groupMessages = groupArray
+            self.configureTableView()
             self.tableViewGrpMessage.reloadData()
             let indexPath = IndexPath(row: self.groupMessages.count-1, section: 0)
             self.tableViewGrpMessage.scrollToRow(at: indexPath, at: .bottom, animated: true)
@@ -72,9 +84,9 @@ class GroupMessageViewController: UIViewController, UITableViewDataSource, UITab
         super.viewDidLoad()
         tableViewGrpMessage.delegate = self
         tableViewGrpMessage.dataSource = self
-        
-        messageView.keyboardToggle()
-        
+           tableViewGrpMessage.estimatedRowHeight = 100
+        //messageView.keyboardToggle()
+        contentview.keyboardToggle()
         
         // Do any additional setup after loading the view.
     }
