@@ -73,7 +73,7 @@ class GroupMessageViewController: UIViewController, UITableViewDataSource, UITab
             self.configureTableView()
             self.tableViewGrpMessage.reloadData()
             let indexPath = IndexPath(row: self.groupMessages.count-1, section: 0)
-            self.tableViewGrpMessage.scrollToRow(at: indexPath, at: .bottom, animated: true)
+            self.tableViewGrpMessage.scrollToRow(at: indexPath, at: .bottom, animated: false)
         }
 //        if self.groupMessages.count > 0 {
 //            self.tableViewGrpMessage.scrollToRow(at: IndexPath(row: self.groupMessages.count - 1, section: 0), at: .none, animated: true)
