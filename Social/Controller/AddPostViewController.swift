@@ -15,7 +15,7 @@ class AddPostViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var btnPost: UIButton!
     @IBAction func btnPostTapped(_ sender: Any) {
-        if txtviewPost.text.isEmpty || txtviewPost.text == "Say Something..."{
+        if txtviewPost.text.checkIfEmpty() || txtviewPost.text == "Say Something..."{
             alert(title: "Enter Post", message: nil, actionTitle: "OK")
             return}
         let postData = ["user" : Auth.auth().currentUser!.email!, "post" : txtviewPost.text! ]

@@ -47,3 +47,12 @@ extension UIView{
     
     
 }
+
+
+extension String {
+    
+    func checkIfEmpty() -> Bool {
+        return self.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+    
+}

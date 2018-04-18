@@ -22,7 +22,7 @@ class GroupMessageViewController: UIViewController, UITableViewDataSource, UITab
         @IBOutlet weak var tableViewGrpMessage: UITableView!
     @IBAction func btnSendTapped(_ sender: Any) {
         
-        if !(txtFieldMessage.text?.isEmpty)! {
+        if !(txtFieldMessage.text?.checkIfEmpty())! {
             txtFieldMessage.isEnabled = false
             btnSend.isEnabled = false
             FirebaseService.instance.createMessage(MessageData: txtFieldMessage.text!, groupId: (groupData?.groupId)!) { (status) in

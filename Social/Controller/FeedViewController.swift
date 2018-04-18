@@ -24,6 +24,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableviewFeed.dequeueReusableCell(withIdentifier: "feedCell") as! FeedCell
+        cell.lblUser.sizeToFit()
+        cell.lblPost.sizeToFit()
         cell.lblUser.text = listPost[indexPath.row].user
         cell.lblPost.text = listPost[indexPath.row].post
         return cell
@@ -34,17 +36,25 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        tableviewFeed.estimatedRowHeight = 100
-//        tableviewFeed.rowHeight = UITableViewAutomaticDimension
 
     }
 
     override func viewWillAppear(_ animated: Bool) {
         FirebaseService.instance.retrievePost { (post) in
             self.listPost = post.reversed()
+            self.configureTableView()
             self.tableviewFeed.reloadData()
         }
        
+    }
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        tableviewFeed.estimatedRowHeight = 100
+        return UITableViewAutomaticDimension
+    }
+    func configureTableView(){
+        
     }
     
     
