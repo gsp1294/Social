@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wPP-pe-8zl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -67,56 +66,41 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="gfB-5e-iea">
-                                                    <rect key="frame" x="10" y="10" width="355" height="79.5"/>
+                                                <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="G0s-A4-sTz">
+                                                    <rect key="frame" x="10" y="21" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="qDy-En-S6m"/>
+                                                        <constraint firstAttribute="height" constant="50" id="rQr-vq-m3Z"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Vrr-5L-W6s">
+                                                    <rect key="frame" x="70" y="21" width="280" height="58"/>
                                                     <subviews>
-                                                        <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="G0s-A4-sTz">
-                                                            <rect key="frame" x="0.0" y="0.0" width="59" height="79.5"/>
-                                                        </imageView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Vrr-5L-W6s">
-                                                            <rect key="frame" x="72" y="0.0" width="283" height="79.5"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Username@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njn-h4-L3v">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="283" height="32.5"/>
-                                                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post Update" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdv-2c-ZGa">
-                                                                    <rect key="frame" x="0.0" y="35.5" width="283" height="44"/>
-                                                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                            <constraints>
-                                                                <constraint firstAttribute="trailing" secondItem="njn-h4-L3v" secondAttribute="trailing" id="5m5-dQ-PNx"/>
-                                                                <constraint firstAttribute="trailing" secondItem="sdv-2c-ZGa" secondAttribute="trailing" id="L03-iy-lVg"/>
-                                                                <constraint firstItem="njn-h4-L3v" firstAttribute="leading" secondItem="Vrr-5L-W6s" secondAttribute="leading" id="PtO-q2-Lp8"/>
-                                                                <constraint firstAttribute="bottom" secondItem="sdv-2c-ZGa" secondAttribute="bottom" id="Wow-KV-KhA"/>
-                                                                <constraint firstItem="sdv-2c-ZGa" firstAttribute="leading" secondItem="Vrr-5L-W6s" secondAttribute="leading" id="bdh-va-2EH"/>
-                                                                <constraint firstItem="sdv-2c-ZGa" firstAttribute="top" secondItem="njn-h4-L3v" secondAttribute="bottom" constant="3" id="vBu-6Y-mHC"/>
-                                                                <constraint firstItem="njn-h4-L3v" firstAttribute="top" secondItem="Vrr-5L-W6s" secondAttribute="top" id="zuS-mZ-Crg"/>
-                                                            </constraints>
-                                                        </stackView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Username@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njn-h4-L3v">
+                                                            <rect key="frame" x="0.0" y="0.0" width="130.5" height="23.5"/>
+                                                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post Update" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdv-2c-ZGa">
+                                                            <rect key="frame" x="0.0" y="26.5" width="99.5" height="31.5"/>
+                                                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="Vrr-5L-W6s" firstAttribute="leading" secondItem="G0s-A4-sTz" secondAttribute="trailing" constant="13" id="AGg-nV-gpK"/>
-                                                        <constraint firstItem="G0s-A4-sTz" firstAttribute="leading" secondItem="gfB-5e-iea" secondAttribute="leading" id="AWy-Fn-atO"/>
-                                                        <constraint firstAttribute="bottom" secondItem="G0s-A4-sTz" secondAttribute="bottom" id="Clr-A7-WGK"/>
-                                                        <constraint firstAttribute="bottom" secondItem="Vrr-5L-W6s" secondAttribute="bottom" id="Mxd-yD-q0i"/>
-                                                        <constraint firstItem="G0s-A4-sTz" firstAttribute="width" secondItem="gfB-5e-iea" secondAttribute="width" multiplier="1:6" id="UYB-uU-25o"/>
-                                                        <constraint firstItem="Vrr-5L-W6s" firstAttribute="top" secondItem="gfB-5e-iea" secondAttribute="top" id="cq8-iU-0mm"/>
-                                                        <constraint firstItem="G0s-A4-sTz" firstAttribute="top" secondItem="gfB-5e-iea" secondAttribute="top" id="kZF-Tr-OgZ"/>
-                                                        <constraint firstAttribute="trailing" secondItem="Vrr-5L-W6s" secondAttribute="trailing" id="nY6-CU-hwE"/>
+                                                        <constraint firstItem="sdv-2c-ZGa" firstAttribute="top" secondItem="njn-h4-L3v" secondAttribute="bottom" constant="3" id="vBu-6Y-mHC"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="gfB-5e-iea" secondAttribute="bottom" constant="10" id="8FG-7q-YQw"/>
-                                                <constraint firstItem="gfB-5e-iea" firstAttribute="top" secondItem="vHN-Ja-5w7" secondAttribute="top" constant="10" id="EmN-xC-5En"/>
-                                                <constraint firstAttribute="trailing" secondItem="gfB-5e-iea" secondAttribute="trailing" constant="10" id="UKU-PX-OQs"/>
-                                                <constraint firstItem="gfB-5e-iea" firstAttribute="leading" secondItem="vHN-Ja-5w7" secondAttribute="leading" constant="10" id="lvI-qA-ydm"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Vrr-5L-W6s" secondAttribute="trailing" constant="10" id="3y0-LN-Czh"/>
+                                                <constraint firstItem="Vrr-5L-W6s" firstAttribute="top" secondItem="vHN-Ja-5w7" secondAttribute="topMargin" constant="10" id="8D8-rk-wnb"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Vrr-5L-W6s" secondAttribute="bottom" constant="10" id="9gA-37-ECT"/>
+                                                <constraint firstItem="G0s-A4-sTz" firstAttribute="top" secondItem="Vrr-5L-W6s" secondAttribute="top" id="Fe1-I9-ot9"/>
+                                                <constraint firstItem="G0s-A4-sTz" firstAttribute="leading" secondItem="vHN-Ja-5w7" secondAttribute="leading" constant="10" id="iAB-jc-MeE"/>
+                                                <constraint firstItem="Vrr-5L-W6s" firstAttribute="leading" secondItem="G0s-A4-sTz" secondAttribute="trailing" constant="10" id="wx7-5y-GkN"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
