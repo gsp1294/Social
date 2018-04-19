@@ -49,8 +49,8 @@ class FirebaseService {
             }
             completion(emailList)
         }
-            
-        }
+        
+
 
     
     func retrievePost (completion : @escaping (_ listPost : [Posts]) -> ()){

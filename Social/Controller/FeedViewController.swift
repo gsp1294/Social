@@ -13,6 +13,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     @IBOutlet weak var tableviewFeed: UITableView!
+        var listPost = [Posts]()
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -32,17 +33,16 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
 
-    var listPost = [Posts]()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableviewFeed.estimatedRowHeight = 100
     }
 
     override func viewWillAppear(_ animated: Bool) {
         FirebaseService.instance.retrievePost { (post) in
             self.listPost = post.reversed()
-            self.configureTableView()
             self.tableviewFeed.reloadData()
         }
        
@@ -50,20 +50,9 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        tableviewFeed.estimatedRowHeight = 100
+        
         return UITableViewAutomaticDimension
     }
-    func configureTableView(){
-        
-    }
     
-    
-    
-
-    
-    
-    
-
-
 }
 
