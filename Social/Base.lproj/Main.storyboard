@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wPP-pe-8zl">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -305,40 +305,41 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="yJX-fi-6Q3">
-                                                    <rect key="frame" x="10" y="10" width="355" height="79.5"/>
+                                                <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="MnD-JC-PeC">
+                                                    <rect key="frame" x="10" y="11" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="48l-PG-Lkh"/>
+                                                        <constraint firstAttribute="width" constant="50" id="BeI-JE-rmQ"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="eNk-5F-tnt">
+                                                    <rect key="frame" x="70" y="11" width="280" height="68"/>
                                                     <subviews>
-                                                        <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="MnD-JC-PeC">
-                                                            <rect key="frame" x="0.0" y="0.0" width="60" height="79.5"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="60" id="Ik8-vs-YKb"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="eNk-5F-tnt">
-                                                            <rect key="frame" x="73" y="0.0" width="282" height="79.5"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Username@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPF-7g-oAO">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="130.5" height="32.5"/>
-                                                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post Update" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ET-yZ-qlj">
-                                                                    <rect key="frame" x="0.0" y="35.5" width="99.5" height="44"/>
-                                                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                        </stackView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Username@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPF-7g-oAO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="130.5" height="27.5"/>
+                                                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post Update" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ET-yZ-qlj">
+                                                            <rect key="frame" x="0.0" y="30.5" width="99.5" height="37.5"/>
+                                                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="6ET-yZ-qlj" firstAttribute="top" secondItem="VPF-7g-oAO" secondAttribute="bottom" constant="3" id="4Mn-bg-NIU"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="yJX-fi-6Q3" secondAttribute="bottom" constant="10" id="46U-eh-ao8"/>
-                                                <constraint firstItem="yJX-fi-6Q3" firstAttribute="top" secondItem="dsC-UJ-hdw" secondAttribute="top" constant="10" id="DdN-eg-3wX"/>
-                                                <constraint firstAttribute="trailing" secondItem="yJX-fi-6Q3" secondAttribute="trailing" constant="10" id="rqg-2j-Uyi"/>
-                                                <constraint firstItem="yJX-fi-6Q3" firstAttribute="leading" secondItem="dsC-UJ-hdw" secondAttribute="leading" constant="10" id="us0-0c-1Lz"/>
+                                                <constraint firstItem="eNk-5F-tnt" firstAttribute="leading" secondItem="MnD-JC-PeC" secondAttribute="trailing" constant="10" id="7eb-5I-UEA"/>
+                                                <constraint firstItem="MnD-JC-PeC" firstAttribute="leading" secondItem="dsC-UJ-hdw" secondAttribute="leading" constant="10" id="VEx-Ve-sZc"/>
+                                                <constraint firstItem="eNk-5F-tnt" firstAttribute="top" secondItem="dsC-UJ-hdw" secondAttribute="topMargin" id="ihr-8U-NQS"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="eNk-5F-tnt" secondAttribute="trailing" constant="10" id="mwM-sE-lci"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="eNk-5F-tnt" secondAttribute="bottom" constant="10" id="oF4-hf-ur1"/>
+                                                <constraint firstItem="MnD-JC-PeC" firstAttribute="top" secondItem="eNk-5F-tnt" secondAttribute="top" id="vLj-tC-JeS"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -667,46 +668,38 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="avC-fy-lIV">
-                                                                            <rect key="frame" x="10" y="0.0" width="365" height="99.5"/>
-                                                                            <subviews>
-                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="AO1-nc-KTD">
-                                                                                    <rect key="frame" x="0.0" y="30" width="40" height="40"/>
-                                                                                    <constraints>
-                                                                                        <constraint firstAttribute="height" constant="40" id="JfD-Ei-SaP"/>
-                                                                                        <constraint firstAttribute="width" constant="40" id="Qlp-2t-14c"/>
-                                                                                    </constraints>
-                                                                                </imageView>
-                                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="iJL-E5-P8q">
-                                                                                    <rect key="frame" x="56" y="10" width="309" height="79.5"/>
-                                                                                    <subviews>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zjJ-yK-gaT">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="309" height="14"/>
-                                                                                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
-                                                                                            <nil key="textColor"/>
-                                                                                            <nil key="highlightedColor"/>
-                                                                                        </label>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQd-Nf-il3">
-                                                                                            <rect key="frame" x="0.0" y="19" width="309" height="60.5"/>
-                                                                                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
-                                                                                            <nil key="textColor"/>
-                                                                                            <nil key="highlightedColor"/>
-                                                                                        </label>
-                                                                                    </subviews>
-                                                                                </stackView>
-                                                                            </subviews>
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="AO1-nc-KTD">
+                                                                            <rect key="frame" x="15" y="21" width="40" height="40"/>
                                                                             <constraints>
-                                                                                <constraint firstItem="iJL-E5-P8q" firstAttribute="top" secondItem="avC-fy-lIV" secondAttribute="top" constant="10" id="3rX-Bi-3cm"/>
-                                                                                <constraint firstAttribute="bottom" secondItem="iJL-E5-P8q" secondAttribute="bottom" constant="10" id="Xjo-10-SfM"/>
-                                                                                <constraint firstItem="AO1-nc-KTD" firstAttribute="leading" secondItem="avC-fy-lIV" secondAttribute="leading" id="ZwS-d9-9L5"/>
+                                                                                <constraint firstAttribute="width" constant="40" id="JKo-rh-zEY"/>
+                                                                                <constraint firstAttribute="height" constant="40" id="tHX-fb-onM"/>
                                                                             </constraints>
+                                                                        </imageView>
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="iJL-E5-P8q">
+                                                                            <rect key="frame" x="65" y="21" width="285" height="58"/>
+                                                                            <subviews>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zjJ-yK-gaT">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="285" height="14"/>
+                                                                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
+                                                                                    <nil key="textColor"/>
+                                                                                    <nil key="highlightedColor"/>
+                                                                                </label>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQd-Nf-il3">
+                                                                                    <rect key="frame" x="0.0" y="19" width="285" height="39"/>
+                                                                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
+                                                                                    <nil key="textColor"/>
+                                                                                    <nil key="highlightedColor"/>
+                                                                                </label>
+                                                                            </subviews>
                                                                         </stackView>
                                                                     </subviews>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="bottom" secondItem="avC-fy-lIV" secondAttribute="bottom" id="XrP-yc-J3S"/>
-                                                                        <constraint firstItem="avC-fy-lIV" firstAttribute="top" secondItem="Bll-G4-LeR" secondAttribute="top" id="cC4-I2-wUw"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="avC-fy-lIV" secondAttribute="trailing" id="dZi-Ko-yeJ"/>
-                                                                        <constraint firstItem="avC-fy-lIV" firstAttribute="leading" secondItem="Bll-G4-LeR" secondAttribute="leading" constant="10" id="lcR-RG-vsx"/>
+                                                                        <constraint firstAttribute="trailingMargin" secondItem="iJL-E5-P8q" secondAttribute="trailing" constant="10" id="Gke-8o-93L"/>
+                                                                        <constraint firstAttribute="bottomMargin" secondItem="iJL-E5-P8q" secondAttribute="bottom" constant="10" id="IXM-kL-aJF"/>
+                                                                        <constraint firstItem="AO1-nc-KTD" firstAttribute="top" secondItem="iJL-E5-P8q" secondAttribute="top" id="RcV-B9-ELL"/>
+                                                                        <constraint firstItem="iJL-E5-P8q" firstAttribute="top" secondItem="Bll-G4-LeR" secondAttribute="topMargin" constant="10" id="Rdx-ZH-c8b"/>
+                                                                        <constraint firstItem="AO1-nc-KTD" firstAttribute="leading" secondItem="Bll-G4-LeR" secondAttribute="leadingMargin" id="WE9-UM-Cgy"/>
+                                                                        <constraint firstItem="iJL-E5-P8q" firstAttribute="leading" secondItem="AO1-nc-KTD" secondAttribute="trailing" constant="10" id="c5H-RU-T1K"/>
                                                                     </constraints>
                                                                 </tableViewCellContentView>
                                                                 <color key="backgroundColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>

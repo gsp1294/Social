@@ -49,6 +49,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         lblProfileName.text = Auth.auth().currentUser?.email
         tablePosts.delegate = self
         tablePosts.dataSource = self
+        tablePosts.estimatedRowHeight = 100
         // Do any additional setup after loading the view.
     }
 
@@ -66,15 +67,14 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 }
             }
             self.listPost = usersFeed
-            self.configureTableView()
             self.tablePosts.reloadData()
         }
     }
-    func configureTableView(){
-        tablePosts.estimatedRowHeight = 100
-        tablePosts.rowHeight = UITableViewAutomaticDimension
-    }
+
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
     
 
     /*
