@@ -20,6 +20,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.lblPost.sizeToFit()
         cell.lblUser.text = listPost[indexPath.row].user
         cell.lblPost.text = listPost[indexPath.row].post
+        cell.lblPost.layoutIfNeeded()
+        cell.lblUser.layoutIfNeeded()
         return cell
     }
     

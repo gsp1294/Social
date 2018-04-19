@@ -22,37 +22,37 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         return listPost.count
     }
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableviewFeed.dequeueReusableCell(withIdentifier: "feedCell") as! FeedCell
-        cell.lblUser.sizeToFit()
-        cell.lblPost.sizeToFit()
+       // cell.lblUser.sizeToFit()
+       // cell.lblPost.sizeToFit()
         cell.lblUser.text = listPost[indexPath.row].user
         cell.lblPost.text = listPost[indexPath.row].post
+        cell.lblUser.layoutIfNeeded()
+        cell.lblPost.layoutIfNeeded()
+        
         return cell
     }
     
-
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableviewFeed.estimatedRowHeight = 100
+
     }
 
     override func viewWillAppear(_ animated: Bool) {
         FirebaseService.instance.retrievePost { (post) in
             self.listPost = post.reversed()
+            self.tableviewFeed.estimatedRowHeight = 100
             self.tableviewFeed.reloadData()
         }
        
     }
     
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        return UITableViewAutomaticDimension
-    }
-    
+
 }
 

@@ -57,6 +57,8 @@ class GroupMessageViewController: UIViewController, UITableViewDataSource, UITab
         cell.lblTextMessage.text = groupMessages[indexPath.row].message
         cell.lblTextMessage.sizeToFit()
         cell.lblUsername.text = groupMessages[indexPath.row].user
+        cell.lblTextMessage.layoutIfNeeded()
+        cell.lblUsername.layoutIfNeeded()
         return cell
     }
     

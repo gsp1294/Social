@@ -49,6 +49,7 @@ class FirebaseService {
             }
             completion(emailList)
         }
+    }
         
 
 
@@ -125,4 +126,5 @@ class FirebaseService {
     
 }
     
+
 
