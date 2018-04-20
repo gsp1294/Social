@@ -54,8 +54,9 @@ class GroupMessageViewController: UIViewController, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableViewGrpMessage.dequeueReusableCell(withIdentifier: "groupMessageCell", for: indexPath) as! GroupMessageCell
         cell.lblUsername.sizeToFit()
-        cell.lblTextMessage.text = groupMessages[indexPath.row].message
         cell.lblTextMessage.sizeToFit()
+        cell.lblTextMessage.text = groupMessages[indexPath.row].message
+        
         cell.lblUsername.text = groupMessages[indexPath.row].user
         cell.lblTextMessage.layoutIfNeeded()
         cell.lblUsername.layoutIfNeeded()

@@ -836,7 +836,7 @@
         <!--Login View Controller-->
         <scene sceneID="fiW-7W-CV5">
             <objects>
-                <viewController storyboardIdentifier="login" id="wPP-pe-8zl" customClass="LoginViewController" customModule="Social" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuthVC" id="wPP-pe-8zl" customClass="LoginViewController" customModule="Social" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g5V-X6-EVI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1012,7 +1012,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabHomeVC" id="49e-Tb-3d3" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" translucent="NO" itemPositioning="fill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
